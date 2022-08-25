@@ -1,0 +1,21 @@
+.content {
+  grid-column: 3 / 10;
+  margin-left: 6.8rem;
+  overflow-y: scroll;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.me {
+  &__heading {
+    font-family: $font-heading;
+    font-size: 4.77rem;
+  }
+  &__desc {
+    font-weight: 300;
+    font-size: 2.304rem;
+    max-width: 50rem;
+    line-height: 1.3;
+  }
+}

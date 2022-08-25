@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap");
+$color-primary-dark: #1d3879;
+$color-primary: #2d5bc4;
+$font-heading: "Titillium Web", sans-serif;
+*,
+*::after,
+*::before {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 67.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: OpenSans, sans-serif;
+  font-size: 1.8rem;
+}
+
+.container {
+  display: grid;
+  grid-template-columns:
+    minmax(11rem, 1fr) repeat(8, minmax(min-content, 14rem))
+    minmax(11rem, 1fr);
+  padding-top: 4rem;
+  height: calc(100vh - 11.2rem);
+}
+.btn {
+  border: 3px solid $color-primary-dark;
+  background: $color-primary;
+  color: #fff;
+  border-radius: 8px;
+  font-size: 1.9rem;
+  padding: 0.8rem 1.6rem;
+  margin-top: 4.8rem;
+  margin-right: 15.2rem;
+}
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  height: 11.2rem;
+}

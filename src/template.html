@@ -7,6 +7,47 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <h3>Wassup</h3>
+    <div class="btn-container">
+      <button class="btn">work with me</button>
+    </div>
+    <div class="container">
+      <nav class="nav">
+        <form class="nav__list">
+          <div class="nav__item">
+            <input
+              type="radio"
+              name="nav"
+              id="home"
+              class="radio__inp"
+              checked
+            />
+            <label for="home"><span class="nav__btn nav__btn--1"></span></label>
+          </div>
+          <div class="nav__item">
+            <input type="radio" name="nav" id="projects" class="radio__inp" />
+            <label for="projects">projects<span class="nav__btn"></span></label>
+          </div>
+
+          <div class="nav__item">
+            <input type="radio" name="nav" id="skills" class="radio__inp" />
+            <label for="skills">skills<span class="nav__btn"></span></label>
+          </div>
+          <div class="nav__item">
+            <input type="radio" name="nav" id="about" class="radio__inp" />
+            <label for="about">about<span class="nav__btn"></span></label>
+          </div>
+        </form>
+      </nav>
+      <div class="content">
+        <section class="section-me me">
+          <h1 class="me__heading">hello I'm Franz</h1>
+          <p class="me__desc">
+            I'm a Full Stack Software Developer specializing in building (and
+            occasionally desigining) exceptional digital experiences
+          </p>
+        </section>
+        <section class="section-projects"></section>
+      </div>
+    </div>
   </body>
 </html>
