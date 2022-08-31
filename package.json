@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/EjMat8/Portfolio#readme",
   "dependencies": {
+    "aos": "^3.0.0-beta.6",
     "webpack": "^5.74.0",
     "webpack-cli": "^4.10.0"
   },

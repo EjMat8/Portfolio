@@ -7,33 +7,51 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
-    <div class="btn-container">
-      <button class="btn">work with me</button>
-    </div>
+    <button class="btn">work with me</button>
     <div class="container">
       <nav class="nav">
         <form class="nav__list">
-          <div class="nav__item">
+          <div class="nav__item nav__item--1">
             <input
               type="radio"
               name="nav"
               id="home"
-              class="radio__inp"
+              class="radio__inp radio__inp--1"
+              value="home"
+              data-section="-595"
               checked
             />
             <label for="home"><span class="nav__btn nav__btn--1"></span></label>
           </div>
-          <div class="nav__item">
-            <input type="radio" name="nav" id="projects" class="radio__inp" />
+          <div class="nav__item nav__item--2">
+            <input
+              type="radio"
+              name="nav"
+              id="projects"
+              data-section="760"
+              class="radio__inp radio__inp--2"
+            />
             <label for="projects">projects<span class="nav__btn"></span></label>
           </div>
 
-          <div class="nav__item">
-            <input type="radio" name="nav" id="skills" class="radio__inp" />
+          <div class="nav__item nav__item--3">
+            <input
+              type="radio"
+              name="nav"
+              data-section="2660"
+              id="skills"
+              class="radio__inp radio__inp--3"
+            />
             <label for="skills">skills<span class="nav__btn"></span></label>
           </div>
-          <div class="nav__item">
-            <input type="radio" name="nav" id="about" class="radio__inp" />
+          <div class="nav__item nav__item--4">
+            <input
+              type="radio"
+              name="nav"
+              id="about"
+              data-section="about"
+              class="radio__inp radio__inp--4"
+            />
             <label for="about">about<span class="nav__btn"></span></label>
           </div>
         </form>
@@ -46,7 +64,179 @@
             occasionally desigining) exceptional digital experiences
           </p>
         </section>
-        <section class="section-projects"></section>
+        <section class="section-projects projects">
+          <div class="projects__item">
+            <div class="projects__img-container">
+              <img
+                class="projects__img projects__img--1"
+                alt="project_picture"
+              />
+              <div class="projects__tools">
+                ReactJS &#x2022; NextJS &#x2022; Redux Toolkit <br />
+                PostgreSQL &#x2022; Moralis &#x2022; Thirdweb &#x2022; Chakra UI
+              </div>
+            </div>
+
+            <div class="projects__desc">
+              <h2>Cryptozon</h2>
+              <p>
+                Cryptozon was created due to the lack of social media
+                capabilities in current NFT marketplaces. <br /><br />This
+                application integrates the connectivity that social media
+                provides, allowing users to connect all over the world and show
+                off some of their NFTs.
+              </p>
+              <div class="projects__links">
+                <a href="https://youtu.be/HnYqz4mWFzY" target="_blank"
+                  >demo presentation</a
+                ><a
+                  href="https://github.com/2202-Capstone/cryptozon-new"
+                  target="_blank"
+                  >github</a
+                ><a href="https://www.cryptozon.app/" target="_blank"
+                  >live site</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="projects__item">
+            <div class="projects__img-container">
+              <img
+                class="projects__img projects__img--2"
+                alt="project_picture"
+              />
+              <div class="projects__tools">
+                React &#x2022; Next js &#x2022; Redux Toolkit <br />
+                PostgreSQL &#x2022; Moralis &#x2022; Thirdweb &#x2022; Chakra UI
+              </div>
+            </div>
+            <div class="projects__desc">
+              <h2>MovieUp</h2>
+              <p>An HBO GO streaming website clone utilizing the TMDB API.</p>
+              <div class="projects__links">
+                <a href="https://github.com/EjMat8/MovieApp/" target="_blank"
+                  >github</a
+                ><a href="https://movie-up.netlify.app/" target="_blank"
+                  >live site</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="projects__item">
+            <div class="projects__img-container">
+              <img
+                class="projects__img projects__img--3"
+                alt="project_picture"
+              />
+              <div class="projects__tools">
+                React &#x2022; Next js &#x2022; Redux Toolkit <br />
+                PostgreSQL &#x2022; Moralis &#x2022; Thirdweb &#x2022; Chakra UI
+              </div>
+            </div>
+            <div class="projects__desc">
+              <h2>TeaTokens</h2>
+              <p>
+                An e-commerce website with an extensive tea product catalog,
+                shopping cart, and checkout.
+              </p>
+              <div class="projects__links">
+                <a
+                  href="https://github.com/teamGoldenrod/TeaTokens"
+                  target="_blank"
+                  >github</a
+                ><a href="https://teatokens.herokuapp.com/" target="_blank"
+                  >live site</a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="projects__item">
+            <div class="projects__img-container">
+              <img
+                class="projects__img projects__img--4"
+                alt="project_picture"
+              />
+              <div class="projects__tools">
+                React &#x2022; Next js &#x2022; Redux Toolkit <br />
+                PostgreSQL &#x2022; Moralis &#x2022; Thirdweb &#x2022; Chakra UI
+              </div>
+            </div>
+            <div class="projects__desc">
+              <h2>Forkify</h2>
+              <p>
+                Forkify clone (of original website:
+                https://forkify-v2.netlify.app/) built from scratch using
+                Next.js to check recipes and ingredients of various foods.
+              </p>
+              <div class="projects__links">
+                <a
+                  href="https://github.com/EjMat8/forkify-using-next"
+                  target="_blank"
+                  >github</a
+                ><a href="https://ej-forkify.vercel.app/" target="_blank"
+                  >live site</a
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="section-skills skills">
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--1" /></div>
+            <p>HTML 5</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--2" /></div>
+            <p>CSS</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--3" /></div>
+            <p>JavaScript</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--4" /></div>
+            <p>Chakra-UI</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--5" /></div>
+            <p>ReactJS</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--6" /></div>
+            <p>Redux</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--7" /></div>
+            <p>NextJS</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--8" /></div>
+            <p>Sequelize</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--9" /></div>
+            <p>PostgreSQL</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--10" /></div>
+            <p>Git</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--11" /></div>
+            <p>MongoDB</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--12" /></div>
+            <p>NoSQL</p>
+          </div>
+          <div class="skill">
+            <div class="logo"><img alt="logo" class="logo--13" /></div>
+            <p>Mongoose</p>
+          </div>
+        </section>
+        <section class="section-about">
+          <h1>This is my about section</h1>
+        </section>
       </div>
     </div>
   </body>

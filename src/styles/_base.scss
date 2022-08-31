@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@200;300;400;600;700&display=swap");
 $color-primary-dark: #1d3879;
 $color-primary: #2d5bc4;
 $font-heading: "Titillium Web", sans-serif;
@@ -19,13 +19,21 @@ body {
   font-family: OpenSans, sans-serif;
   font-size: 1.8rem;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-heading;
+}
 
 .container {
   display: grid;
   grid-template-columns:
     minmax(11rem, 1fr) repeat(8, minmax(min-content, 14rem))
     minmax(11rem, 1fr);
-  padding-top: 4rem;
+
   height: calc(100vh - 11.2rem);
 }
 .btn {
@@ -35,12 +43,9 @@ body {
   border-radius: 8px;
   font-size: 1.9rem;
   padding: 0.8rem 1.6rem;
-  margin-top: 4.8rem;
-  margin-right: 15.2rem;
-}
-.btn-container {
-  display: flex;
-  justify-content: flex-end;
-  align-items: flex-start;
-  height: 11.2rem;
+  cursor: pointer;
+  position: absolute;
+  top: 4.8rem;
+  right: 15.2rem;
+  z-index: 25;
 }

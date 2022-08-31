@@ -1,9 +1,137 @@
 .content {
   grid-column: 3 / 10;
   margin-left: 6.8rem;
+  padding-top: 15.2rem;
   overflow-y: scroll;
+  position: relative;
+  height: 100vh;
   &::-webkit-scrollbar {
     display: none;
+  }
+}
+
+.section-me {
+  height: 100%;
+
+  transition: all 0.2s ease-out;
+}
+
+.section-projects {
+  scroll-snap-align: start;
+  transition: all 0.2s ease-out;
+  margin-bottom: 40rem;
+
+  // position: absolute;
+  // top: 100%;
+  // left: 0;
+}
+
+.section-skills {
+  margin-bottom: 40rem;
+
+  transition: all 0.2s ease-out;
+}
+
+.skills {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  column-gap: 5.6rem;
+  row-gap: 4rem;
+
+  p {
+    text-align: center;
+    font-size: 1.9rem;
+    font-weight: bold;
+  }
+}
+.logo {
+  border: 3px solid $color-primary-dark;
+  height: 14.9rem;
+  width: 14.9rem;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.6rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s;
+  &:hover {
+    background: rgba($color-primary, 0.1);
+  }
+}
+
+.projects {
+  &__item {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 4.8rem;
+    }
+    &:last-child {
+      margin-bottom: 8rem;
+      padding-bottom: 1.6rem;
+    }
+  }
+
+  &__img-container {
+    position: relative;
+    border: 3px solid $color-primary-dark;
+    border-radius: 8px;
+    margin-right: 2.7rem;
+    min-width: 44.9rem;
+    min-height: 29.9rem;
+    overflow: hidden;
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+  &__tools {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 1.33rem;
+    line-height: 1.5;
+    font-weight: 600;
+    word-spacing: 3px;
+    letter-spacing: 0.3px;
+    color: white;
+    background: rgba($color-primary-dark, 0.7);
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    h2 {
+      font-size: 3.98rem;
+      margin-bottom: 1.6rem;
+    }
+    p {
+      font-size: 1.6rem;
+      font-weight: 300;
+      margin-bottom: 3.8rem;
+    }
+    a {
+      &:not(:last-child) {
+        margin-right: 2.4rem;
+      }
+      color: #000;
+      font-weight: bold;
+      font-size: 1.6rem;
+    }
   }
 }
 
@@ -11,6 +139,7 @@
   &__heading {
     font-family: $font-heading;
     font-size: 4.77rem;
+    font-weight: 700;
   }
   &__desc {
     font-weight: 300;
