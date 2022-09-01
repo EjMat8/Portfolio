@@ -81,6 +81,12 @@
     min-width: 44.9rem;
     min-height: 29.9rem;
     overflow: hidden;
+    &:hover .projects__tools {
+      opacity: 1;
+    }
+    &:hover + .projects__desc h2 {
+      color: $color-primary;
+    }
   }
 
   &__img {
@@ -109,6 +115,8 @@
     letter-spacing: 0.3px;
     color: white;
     background: rgba($color-primary-dark, 0.7);
+    opacity: 0;
+    transition: all 0.2s ease-in;
   }
 
   &__desc {
@@ -118,6 +126,7 @@
     h2 {
       font-size: 3.98rem;
       margin-bottom: 1.6rem;
+      transition: all 0.2s ease-in;
     }
     p {
       font-size: 1.6rem;
@@ -131,7 +140,20 @@
       color: #000;
       font-weight: bold;
       font-size: 1.6rem;
+      transition: all 0.2s ease-in;
+      &:hover {
+        color: $color-primary;
+      }
     }
+  }
+}
+
+.about {
+  p {
+    font-size: 2.4rem;
+    line-height: 1.5;
+    width: 80%;
+    font-weight: 300;
   }
 }
 
