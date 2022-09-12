@@ -24,7 +24,7 @@ section {
 }
 
 .section-contact {
-  margin-bottom: 10rem;
+  margin-bottom: 11.5rem;
 }
 
 .skills {
@@ -243,6 +243,7 @@ section {
       padding: 0.9rem;
       font-family: "OpenSans", sans-serif;
       border-radius: 5px;
+      resize: none;
 
       border: 3px solid $color-primary-dark;
 
@@ -257,6 +258,8 @@ section {
       border: 3px solid $color-primary-dark;
       background: $color-primary-dark;
       border-radius: 5px;
+      font-size: 1.9rem;
+      font-weight: bold;
     }
   }
 }

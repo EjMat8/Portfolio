@@ -97,6 +97,7 @@ content.addEventListener("scroll", (e) => {
 nav.addEventListener("change", function (e) {
   const num = +e.target.dataset.section;
   const position = num ? content.scrollHeight - num : 0;
+  console.log(content.scrollHeight);
   content.scrollTo({
     top: position,
     behavior: "smooth",
