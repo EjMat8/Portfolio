@@ -17,14 +17,14 @@ section {
   height: 100%;
 }
 
-.section-projects {
-  margin-bottom: 40rem;
-}
-.section-about {
-  margin-bottom: 45rem;
-}
+.section-projects,
+.section-about,
 .section-skills {
   margin-bottom: 40rem;
+}
+
+.section-contact {
+  margin-bottom: 10rem;
 }
 
 .skills {
@@ -204,6 +204,59 @@ section {
       font-weight: bold;
       color: $color-primary-dark;
       margin-top: 8.3px;
+    }
+  }
+}
+
+.contact {
+  h2 {
+    text-decoration: underline;
+    font-size: 4.8rem;
+    margin-bottom: 1rem;
+  }
+  p {
+    font-size: 1.9rem;
+    font-weight: 300;
+    width: 60rem;
+    margin-bottom: 1.8rem;
+  }
+  form {
+    display: flex;
+    border: 3px solid $color-primary-dark;
+    border-radius: 8px;
+    flex-direction: column;
+    padding: 1.8rem;
+    width: 51.6rem;
+    height: 42.6rem;
+    & > *:not(:last-child) {
+      margin-bottom: 1.6rem;
+      font-size: 1.6rem;
+    }
+    input {
+      height: 4rem;
+      padding: 0.9rem;
+      border-radius: 5px;
+      border: 3px solid $color-primary-dark;
+    }
+    textarea {
+      height: 21rem;
+      padding: 0.9rem;
+      font-family: "OpenSans", sans-serif;
+      border-radius: 5px;
+
+      border: 3px solid $color-primary-dark;
+
+      &::placeholder {
+        font-family: "OpenSans", sans-serif;
+      }
+    }
+    button {
+      height: 4rem;
+      text-transform: uppercase;
+      color: #fff;
+      border: 3px solid $color-primary-dark;
+      background: $color-primary-dark;
+      border-radius: 5px;
     }
   }
 }
