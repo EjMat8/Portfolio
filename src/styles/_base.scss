@@ -41,6 +41,11 @@ h6 {
       minmax(6rem, 1fr) repeat(8, minmax(min-content, 1fr))
       minmax(6rem, 1fr);
   }
+  @media only screen and (max-width: 1000px) {
+    grid-template-columns:
+      minmax(2.5rem, 1fr) repeat(8, minmax(min-content, 1fr))
+      minmax(2.5rem, 1fr);
+  }
 }
 .btn {
   border: 3px solid $color-primary-dark;

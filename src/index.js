@@ -47,8 +47,8 @@ linkedinIcon.src = linkedin;
 resumeIcon.src = file;
 skills.generateLogo();
 
-sections[1].style.opacity = 0;
-sections[2].style.opacity = 0;
+// sections[1].style.opacity = 0;
+// sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
 navItem2.style.top = "40vh";
 navItem3.style.top = "40vh";
@@ -61,6 +61,7 @@ content.addEventListener("scroll", (e) => {
   // console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
 
   // FADES
+  /*
   if (scrollTop >= 325) sections[1].style.opacity = 1;
   else sections[1].style.opacity = 0;
 
@@ -80,7 +81,7 @@ content.addEventListener("scroll", (e) => {
     sections[3].style.opacity = 1 - (scrollTop - 3900) / 100;
 
   if (scrollTop >= 4200) sections[4].style.opacity = 1;
-  else sections[4].style.opacity = 0;
+  else sections[4].style.opacity = 0;*/
   // if(scrollTop)
 
   //Navbar scrolls

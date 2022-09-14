@@ -9,6 +9,9 @@
   &::-webkit-scrollbar {
     display: none;
   }
+  @media only screen and (max-width: 780px) {
+    margin-left: 3.5rem;
+  }
 }
 section {
   transition: all 0.2s linear;
@@ -29,14 +32,39 @@ section {
 
 .skills {
   display: grid;
+  width: max-content;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 5.6rem;
   row-gap: 4rem;
+  justify-items: center;
+  justify-content: start;
+
   @media only screen and (max-width: 1345px) {
     grid-template-columns: repeat(4, 1fr);
+    column-gap: 7.6rem;
   }
-  @media only screen and (max-width: 1200px) {
+  @media only screen and (max-width: 1185px) {
+    column-gap: 5.6rem;
+  }
+  @media only screen and (max-width: 1120px) {
+    column-gap: 3.6rem;
+  }
+  @media only screen and (max-width: 1053px) {
+    column-gap: 2.8rem;
+  }
+  @media only screen and (max-width: 1022px) {
     grid-template-columns: repeat(3, 1fr);
+    column-gap: 7vw;
+  }
+  @media only screen and (max-width: 920px) {
+    column-gap: 5vw;
+  }
+  @media only screen and (max-width: 830px) {
+    column-gap: 2.8rem;
+  }
+  @media only screen and (max-width: 795px) {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 7rem;
   }
   p {
     text-align: center;
@@ -56,6 +84,15 @@ section {
   position: relative;
   overflow: hidden;
   transition: all 0.2s;
+  @media only screen and (max-width: 795px) {
+    img {
+      height: 9rem;
+      width: 9rem;
+      object-fit: contain;
+    }
+    height: 14rem;
+    width: 14rem;
+  }
   &:hover {
     background: rgba($color-primary, 0.1);
   }
@@ -85,6 +122,7 @@ section {
     @media only screen and (max-width: 1021px) {
       flex-direction: column;
       align-items: flex-start;
+      width: 70vw;
     }
   }
 
@@ -103,6 +141,11 @@ section {
     @media only screen and (max-width: 1120px) {
       min-width: 35.9rem;
       min-height: 20.9rem;
+    }
+    @media only screen and (max-width: 1021px) {
+      min-width: 44.9rem;
+      min-height: 29.9rem;
+      margin-bottom: 0.6rem;
     }
     &:hover .projects__tools {
       opacity: 1;
@@ -162,6 +205,9 @@ section {
       @media only screen and (max-width: 1120px) {
         font-size: 1.5rem;
       }
+      @media only screen and (max-width: 900px) {
+        width: 95%;
+      }
     }
     a {
       &:not(:last-child) {
@@ -204,18 +250,39 @@ section {
   }
 }
 .about {
+  @media only screen and (max-width: 880px) {
+    width: 72.5vw;
+  }
   h2 {
     font-size: 4.8rem;
+    @media only screen and (max-width: 880px) {
+      font-size: 4.1rem;
+    }
+    @media only screen and (max-width: 780px) {
+      font-size: 4rem;
+      width: 60%;
+    }
   }
   h3 {
     font-family: "OpenSans", sans-serif;
     font-size: 2.3rem;
     font-weight: 300;
     margin-bottom: 4.8rem;
+    @media only screen and (max-width: 880px) {
+      font-size: 1.9rem;
+    }
+    @media only screen and (max-width: 780px) {
+      font-size: 1.8rem;
+      width: 90%;
+    }
   }
   p {
     font-size: 1.6rem;
     margin-left: 2.5rem;
+    @media only screen and (max-width: 880px) {
+      font-size: 1.7rem;
+      width: 70%;
+    }
   }
   .p-box {
     display: flex;
