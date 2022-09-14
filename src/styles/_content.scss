@@ -32,7 +32,12 @@ section {
   grid-template-columns: repeat(5, 1fr);
   column-gap: 5.6rem;
   row-gap: 4rem;
-
+  @media only screen and (max-width: 1345px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media only screen and (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
   p {
     text-align: center;
     font-size: 1.9rem;
@@ -57,14 +62,29 @@ section {
 }
 
 .projects {
+  // background: red;
   &__item {
     display: flex;
+    // background: red;
+
     &:not(:last-child) {
       margin-bottom: 4.8rem;
     }
     &:last-child {
       margin-bottom: 8rem;
       padding-bottom: 1.6rem;
+    }
+    @media only screen and (max-width: 1340px) {
+      width: 77vw;
+      padding-right: 2rem;
+    }
+    @media only screen and (max-width: 1120px) {
+      width: 73vw;
+      padding-right: 2rem;
+    }
+    @media only screen and (max-width: 1021px) {
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
@@ -76,6 +96,14 @@ section {
     min-width: 44.9rem;
     min-height: 29.9rem;
     overflow: hidden;
+    @media only screen and (max-width: 1200px) {
+      min-width: 38.9rem;
+      min-height: 23.9rem;
+    }
+    @media only screen and (max-width: 1120px) {
+      min-width: 35.9rem;
+      min-height: 20.9rem;
+    }
     &:hover .projects__tools {
       opacity: 1;
     }
@@ -122,11 +150,18 @@ section {
       font-size: 3.98rem;
       margin-bottom: 1.6rem;
       transition: all 0.2s ease-in;
+      @media only screen and (max-width: 1120px) {
+        font-size: 3.78rem;
+      }
     }
     p {
       font-size: 1.6rem;
       font-weight: 300;
       margin-bottom: 3.8rem;
+      width: 100%;
+      @media only screen and (max-width: 1120px) {
+        font-size: 1.5rem;
+      }
     }
     a {
       &:not(:last-child) {
@@ -135,6 +170,9 @@ section {
       color: #000;
       font-weight: bold;
       font-size: 1.6rem;
+      @media only screen and (max-width: 1120px) {
+        font-size: 1.5rem;
+      }
       transition: all 0.2s ease-in;
       &:hover {
         color: $color-primary;

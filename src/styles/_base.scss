@@ -29,12 +29,18 @@ h6 {
 }
 
 .container {
+  // background: red;
   display: grid;
   grid-template-columns:
     minmax(11rem, 1fr) repeat(8, minmax(min-content, 14rem))
     minmax(11rem, 1fr);
 
   height: calc(100vh - 11.2rem);
+  @media only screen and (max-width: 1400px) {
+    grid-template-columns:
+      minmax(6rem, 1fr) repeat(8, minmax(min-content, 1fr))
+      minmax(6rem, 1fr);
+  }
 }
 .btn {
   border: 3px solid $color-primary-dark;
@@ -48,4 +54,11 @@ h6 {
   top: 4.8rem;
   right: 15.2rem;
   z-index: 25;
+  transition: all 0.2s ease-in;
+  @media only screen and (max-width: 1535px) {
+    right: 8rem;
+  }
+  @media only screen and (max-width: 1460px) {
+    right: 5rem;
+  }
 }

@@ -58,7 +58,7 @@ content.addEventListener("scroll", (e) => {
   const scrollMeasure = content.scrollHeight - content.scrollTop;
   const scrollTop = content.scrollHeight - scrollMeasure;
   sections[0].style.opacity = 1 - scrollTop / 100;
-  console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
+  // console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
 
   // FADES
   if (scrollTop >= 325) sections[1].style.opacity = 1;
@@ -76,6 +76,11 @@ content.addEventListener("scroll", (e) => {
   if (scrollTop >= 3440) sections[3].style.opacity = 1;
   else sections[3].style.opacity = 0;
 
+  if (scrollTop >= 3900)
+    sections[3].style.opacity = 1 - (scrollTop - 3900) / 100;
+
+  if (scrollTop >= 4200) sections[4].style.opacity = 1;
+  else sections[4].style.opacity = 0;
   // if(scrollTop)
 
   //Navbar scrolls
@@ -117,7 +122,6 @@ content.addEventListener("scroll", (e) => {
 nav.addEventListener("change", function (e) {
   const num = +e.target.dataset.section;
   const position = num ? content.scrollHeight - num : 0;
-  console.log(content.scrollHeight);
   content.scrollTo({
     top: position,
     behavior: "smooth",
