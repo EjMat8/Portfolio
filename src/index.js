@@ -55,43 +55,63 @@ navItem3.style.top = "40vh";
 navItem4.style.top = "40vh";
 
 content.addEventListener("scroll", (e) => {
-  sections[0].style.opacity = 1 - content.scrollTop / 100;
-  console.log(content.scrollTop);
+  const scrollMeasure = content.scrollHeight - content.scrollTop;
+  const scrollTop = content.scrollHeight - scrollMeasure;
+  sections[0].style.opacity = 1 - scrollTop / 100;
+  console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
+
   // FADES
-  if (content.scrollTop >= 325) sections[1].style.opacity = 1;
+  if (scrollTop >= 325) sections[1].style.opacity = 1;
   else sections[1].style.opacity = 0;
 
-  if (content.scrollTop >= 1910)
-    sections[1].style.opacity = 1 - (content.scrollTop - 1910) / 100;
+  if (scrollTop >= 1910)
+    sections[1].style.opacity = 1 - (scrollTop - 1910) / 100;
 
-  if (content.scrollTop >= 2400) sections[2].style.opacity = 1;
+  if (scrollTop >= 2300) sections[2].style.opacity = 1;
   else sections[2].style.opacity = 0;
 
+  if (scrollTop >= 2950)
+    sections[2].style.opacity = 1 - (scrollTop - 2950) / 100;
+
+  if (scrollTop >= 3440) sections[3].style.opacity = 1;
+  else sections[3].style.opacity = 0;
+
+  // if(scrollTop)
+
   //Navbar scrolls
-  if (content.scrollTop < 710) {
-    if (content.scrollTop === 0) navItem2.style.top = "40vh";
-    else navItem2.style.top = 40 - content.scrollTop / 17.75 + "vh";
+  if (scrollMeasure > 4960) {
+    if (content.scrollHeight === scrollMeasure) navItem2.style.top = "40vh";
+    else
+      navItem2.style.top =
+        40 - scrollTop / ((content.scrollHeight - 4960) / 40) + "vh";
   } else {
     navItem2.style.top = "0";
   }
-  if (content.scrollTop >= 1900 && content.scrollTop <= 2643) {
-    navItem3.style.top = 40 - (content.scrollTop - 1900) / 18.575 + "vh";
-  } else if (content.scrollTop < 1900) {
+
+  if (scrollMeasure <= 3750 && scrollMeasure >= 3050) {
+    navItem3.style.top = 40 - (3750 - scrollMeasure) / 17.5 + "vh";
+  } else if (scrollMeasure > 3750) {
     navItem3.style.top = "40vh";
-  } else if (content.scrollTop > 2643) {
+  } else if (scrollMeasure < 3050) {
     navItem3.style.top = "0";
   }
 
+  if (scrollMeasure <= 2635 && scrollMeasure >= 1915)
+    navItem4.style.top = 40 - (2635 - scrollMeasure) / 18 + "vh";
+  else if (scrollMeasure > 2635) navItem4.style.top = "40vh";
+  else if (scrollMeasure < 1915) navItem4.style.top = "0";
+
   //Navbar check
-  if (content.scrollTop >= 0 && content.scrollTop <= 575) {
+  if (scrollMeasure <= content.scrollHeight && scrollMeasure >= 5085) {
     document.querySelector(".radio__inp--1").checked = true;
-  }
-  if (content.scrollTop > 575 && content.scrollTop <= 2400) {
+  } else if (scrollMeasure < 5085 && scrollMeasure >= 3150) {
     document.querySelector(".radio__inp--2").checked = true;
-  }
-  if (content.scrollTop > 2400) {
+  } else if (scrollMeasure < 3150 && scrollMeasure >= 1980) {
     document.querySelector(".radio__inp--3").checked = true;
-  }
+  } else if (scrollMeasure < 1980 && scrollMeasure >= 990) {
+    document.querySelector(".radio__inp--4").checked = true;
+  } else if (scrollMeasure < 990)
+    document.querySelector(".radio__inp--4").checked = false;
 });
 
 nav.addEventListener("change", function (e) {
