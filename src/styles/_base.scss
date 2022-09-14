@@ -66,4 +66,16 @@ h6 {
   @media only screen and (max-width: 1460px) {
     right: 5rem;
   }
+  @media only screen and (max-width: 1000px) {
+    top: 3.5rem;
+    right: 4rem;
+  }
+  @media only screen and (max-width: 825px) {
+    top: 2.5rem;
+    right: 3rem;
+  }
+  @media only screen and (max-width: 610px) {
+    top: 1.9rem;
+    right: 2.3rem;
+  }
 }
