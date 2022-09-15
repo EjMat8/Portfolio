@@ -2,6 +2,10 @@
 $color-primary-dark: #1d3879;
 $color-primary: #2d5bc4;
 $font-heading: "Titillium Web", sans-serif;
+$bp-xl: 75em; // 1200px
+$bp-large: 62.5em; // 1000px
+$bp-medium: 50em; // 800px;
+$bp-small: 37.5em; // 600px;
 *,
 *::after,
 *::before {
@@ -34,23 +38,6 @@ h6 {
   grid-template-columns:
     minmax(11rem, 1fr) repeat(8, minmax(min-content, 14rem))
     minmax(11rem, 1fr);
-
-  height: calc(100vh - 11.2rem);
-  @media only screen and (max-width: 1400px) {
-    grid-template-columns:
-      minmax(6rem, 1fr) repeat(8, minmax(min-content, 1fr))
-      minmax(6rem, 1fr);
-  }
-  @media only screen and (max-width: 1000px) {
-    grid-template-columns:
-      minmax(2.5rem, 1fr) repeat(8, minmax(min-content, 1fr))
-      minmax(2.5rem, 1fr);
-  }
-  @media only screen and (max-width: 650px) {
-    grid-template-columns:
-      minmax(1.9rem, 1fr) repeat(8, minmax(min-content, 1fr))
-      minmax(1.9rem, 1fr);
-  }
 }
 
 .btn {
@@ -66,22 +53,4 @@ h6 {
   right: 15.2rem;
   z-index: 25;
   transition: all 0.2s ease-in;
-  @media only screen and (max-width: 1535px) {
-    right: 8rem;
-  }
-  @media only screen and (max-width: 1460px) {
-    right: 5rem;
-  }
-  @media only screen and (max-width: 1000px) {
-    top: 3.5rem;
-    right: 4rem;
-  }
-  @media only screen and (max-width: 825px) {
-    top: 2.5rem;
-    right: 3rem;
-  }
-  @media only screen and (max-width: 610px) {
-    top: 1.9rem;
-    right: 2.3rem;
-  }
 }

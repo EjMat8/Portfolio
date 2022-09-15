@@ -13,6 +13,7 @@ import github from "./assets/icons/github.svg";
 import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 
+skills.generateLogo();
 const image1Container = document.querySelector(".projects__img--1");
 const image2Container = document.querySelector(".projects__img--2");
 const image3Container = document.querySelector(".projects__img--3");
@@ -45,7 +46,6 @@ arrowIcon.src = arrow;
 githubIcon.src = github;
 linkedinIcon.src = linkedin;
 resumeIcon.src = file;
-skills.generateLogo();
 
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
@@ -54,26 +54,19 @@ navItem2.style.top = "40vh";
 navItem3.style.top = "40vh";
 navItem4.style.top = "40vh";
 
+sections.forEach((el) => {
+  observer.observe(el);
+});
+
+addEventListener("resize", (e) => {
+  console.log(content.scrollHeight);
+});
+
 content.addEventListener("scroll", (e) => {
   const scrollMeasure = content.scrollHeight - content.scrollTop;
   const scrollTop = content.scrollHeight - scrollMeasure;
-
-  console.log(
-    "scrollMeasure",
-    scrollMeasure,
-    "scroll top",
-    content.scrollTop,
-    "section 0",
-    sections[0].scrollHeight,
-    "section 1",
-    sections[1].scrollHeight,
-    "section 2",
-    sections[2].scrollHeight,
-    "section 3",
-    sections[3].scrollHeight,
-    "section 4",
-    sections[4].scrollHeight
-  );
+  const { height: sec1Height } = sections[0].getBoundingClientRect();
+  console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
 
   // FADES
   /*
@@ -101,27 +94,27 @@ content.addEventListener("scroll", (e) => {
   // if(scrollTop)
 
   //Navbar scrolls
-  if (scrollMeasure > 4960) {
-    if (content.scrollHeight === scrollMeasure) navItem2.style.top = "40vh";
-    else
-      navItem2.style.top =
-        40 - scrollTop / ((content.scrollHeight - 4960) / 40) + "vh";
-  } else {
-    navItem2.style.top = "0";
-  }
+  // if (content.scrollTop < sec1Height) {
+  //   if (content.scrollHeight === scrollMeasure) navItem2.style.top = "40vh";
+  //   else
+  //     navItem2.style.top =
+  //       40 - scrollTop / ((content.scrollHeight - 4960) / 40) + "vh";
+  // } else {
+  //   navItem2.style.top = "0";
+  // }
 
-  if (scrollMeasure <= 3750 && scrollMeasure >= 3050) {
-    navItem3.style.top = 40 - (3750 - scrollMeasure) / 17.5 + "vh";
-  } else if (scrollMeasure > 3750) {
-    navItem3.style.top = "40vh";
-  } else if (scrollMeasure < 3050) {
-    navItem3.style.top = "0";
-  }
+  // if (scrollMeasure <= 3750 && scrollMeasure >= 3050) {
+  //   navItem3.style.top = 40 - (3750 - scrollMeasure) / 17.5 + "vh";
+  // } else if (scrollMeasure > 3750) {
+  //   navItem3.style.top = "40vh";
+  // } else if (scrollMeasure < 3050) {
+  //   navItem3.style.top = "0";
+  // }
 
-  if (scrollMeasure <= 2635 && scrollMeasure >= 1915)
-    navItem4.style.top = 40 - (2635 - scrollMeasure) / 18 + "vh";
-  else if (scrollMeasure > 2635) navItem4.style.top = "40vh";
-  else if (scrollMeasure < 1915) navItem4.style.top = "0";
+  // if (scrollMeasure <= 2635 && scrollMeasure >= 1915)
+  //   navItem4.style.top = 40 - (2635 - scrollMeasure) / 18 + "vh";
+  // else if (scrollMeasure > 2635) navItem4.style.top = "40vh";
+  // else if (scrollMeasure < 1915) navItem4.style.top = "0";
 
   //Navbar check
   if (scrollMeasure <= content.scrollHeight && scrollMeasure >= 5085) {
