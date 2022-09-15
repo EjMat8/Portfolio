@@ -1,6 +1,10 @@
 .nav {
   padding: 1rem 1rem 0 1rem;
   grid-column: 2 / 3;
+  @media only screen and (max-width: $bp-sm) {
+    grid-column: 9 / 10;
+    grid-row: 1 / -1;
+  }
   margin-top: 17.2rem;
 
   overflow: hidden;

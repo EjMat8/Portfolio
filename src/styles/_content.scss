@@ -1,7 +1,13 @@
 .content {
   grid-column: 3 / 10;
   margin-left: 6.8rem;
-
+  @media only screen and (max-width: $bp-md) {
+    margin-left: 3.5rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    grid-column: 2 / 9;
+    grid-row: 1 / -1;
+  }
   overflow-y: scroll;
   position: relative;
   height: 100vh;
@@ -43,7 +49,6 @@ section {
 .skills {
   display: grid;
   position: relative;
-  z-index: 100;
 
   padding: 5px;
 
@@ -81,6 +86,9 @@ section {
   // background: red;
   &__item {
     display: flex;
+    @media only screen and (max-width: $bp-lg) {
+      flex-direction: column;
+    }
     & > * {
       flex-basis: 50%;
     }
@@ -236,6 +244,7 @@ section {
 
 .contact {
   // background: red;
+  margin-bottom: 22vh;
   h2 {
     text-decoration: underline;
     font-size: 4.8rem;
