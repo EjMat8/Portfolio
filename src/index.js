@@ -50,16 +50,14 @@ resumeIcon.src = file;
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
-navItem2.style.top = "40vh";
-navItem3.style.top = "40vh";
-navItem4.style.top = "40vh";
-
-sections.forEach((el) => {
-  observer.observe(el);
-});
+navItem2.style.top = 4 * (innerHeight / 100) + "vh";
+navItem3.style.top = 4 * (innerHeight / 100) + "vh";
+navItem4.style.top = 4 * (innerHeight / 100) + "vh";
 
 addEventListener("resize", (e) => {
-  console.log(content.scrollHeight);
+  navItem2.style.top = 4 * (innerHeight / 100) + "vh";
+  navItem3.style.top = 4 * (innerHeight / 100) + "vh";
+  navItem4.style.top = 4 * (innerHeight / 100) + "vh";
 });
 
 content.addEventListener("scroll", (e) => {
