@@ -18,8 +18,20 @@ section {
 }
 .section-me {
   height: 100%;
+  // background: aquamarine;
 }
-
+// .section-projects {
+//   background: orchid;
+// }
+// .section-about {
+//   background: goldenrod;
+// }
+// .section-skills {
+//   background: chartreuse;
+// }
+// .section-contact {
+//   background: lightcoral;
+// }
 .section-projects,
 .section-about,
 .section-skills {
@@ -27,7 +39,8 @@ section {
 }
 
 .section-contact {
-  margin-bottom: 11.5rem;
+  // margin-bottom: 11.5rem;
+  height: 90vh;
 }
 
 .skills {
@@ -52,7 +65,7 @@ section {
   @media only screen and (max-width: 1053px) {
     column-gap: 2.8rem;
   }
-  @media only screen and (max-width: 1022px) {
+  @media only screen and (max-width: 1024px) {
     grid-template-columns: repeat(3, 1fr);
     column-gap: 7vw;
   }
@@ -252,6 +265,9 @@ section {
     font-family: $font-heading;
     font-size: 4.77rem;
     font-weight: 700;
+    @media only screen and (max-width: 715px) {
+      font-size: 4.5rem;
+    }
   }
   &__desc {
     font-weight: 300;
@@ -261,6 +277,9 @@ section {
     @media only screen and (max-width: 715px) {
       font-size: 2rem;
       width: 90%;
+    }
+    @media only screen and (max-width: 600px) {
+      width: 80%;
     }
   }
 }
@@ -276,6 +295,10 @@ section {
     @media only screen and (max-width: 780px) {
       font-size: 4rem;
       width: 60%;
+    }
+    @media only screen and (max-width: 639px) {
+      font-size: 3.9rem;
+      width: 70%;
     }
   }
   h3 {
@@ -331,6 +354,9 @@ section {
 .contact {
   @media only screen and (max-width: 825px) {
     width: 65vw;
+  }
+  @media only screen and (max-width: 610px) {
+    width: 62vw;
   }
   h2 {
     text-decoration: underline;

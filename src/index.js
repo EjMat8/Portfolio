@@ -57,11 +57,27 @@ navItem4.style.top = "40vh";
 content.addEventListener("scroll", (e) => {
   const scrollMeasure = content.scrollHeight - content.scrollTop;
   const scrollTop = content.scrollHeight - scrollMeasure;
-  sections[0].style.opacity = 1 - scrollTop / 100;
-  // console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
+
+  console.log(
+    "scrollMeasure",
+    scrollMeasure,
+    "scroll top",
+    content.scrollTop,
+    "section 0",
+    sections[0].scrollHeight,
+    "section 1",
+    sections[1].scrollHeight,
+    "section 2",
+    sections[2].scrollHeight,
+    "section 3",
+    sections[3].scrollHeight,
+    "section 4",
+    sections[4].scrollHeight
+  );
 
   // FADES
   /*
+   sections[0].style.opacity = 1 - scrollTop / 100;
   if (scrollTop >= 325) sections[1].style.opacity = 1;
   else sections[1].style.opacity = 0;
 

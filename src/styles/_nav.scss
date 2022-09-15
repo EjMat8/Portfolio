@@ -1,10 +1,12 @@
 .nav {
   padding: 1rem;
   grid-column: 2 / 3;
-  margin-top: 1rem;
-  padding-top: 16.2rem;
-  overflow: hidden;
+  margin-top: 17.2rem;
 
+  overflow: hidden;
+  @media only screen and (max-width: 650px) {
+    padding: 0;
+  }
   .radio__inp {
     display: none;
   }
