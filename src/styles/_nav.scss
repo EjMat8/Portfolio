@@ -1,14 +1,14 @@
 .nav {
   padding: 1rem 1rem 0 1rem;
   grid-column: 2 / 3;
+
+  margin-top: 17.2rem;
   @media only screen and (max-width: $bp-sm) {
     grid-column: 9 / 10;
     grid-row: 1 / -1;
+    margin-top: 10.5rem;
+    padding: 0 1rem;
   }
-  margin-top: 17.2rem;
-
-  overflow: hidden;
-
   .radio__inp {
     display: none;
   }
@@ -20,7 +20,8 @@
     &--2,
     &--3,
     &--4 {
-      position: relative;
+      // position: absolute;
+      // z-index: 50;
       // top: 32.5rem;
       transition: all 0s linear;
     }
@@ -32,12 +33,16 @@
     align-items: flex-end;
     gap: 4rem;
     height: 100%;
-    position: relative;
+
     // background: red;
   }
   label {
     display: flex;
     align-items: center;
+    @media only screen and (max-width: $bp-sm) {
+      font-size: 1.55rem;
+      color: #afafaf;
+    }
   }
   &__btn {
     display: inline-block;
@@ -49,7 +54,9 @@
     margin-left: 2.4rem;
     z-index: 10;
     cursor: pointer;
-
+    @media only screen and (max-width: $bp-sm) {
+      margin-left: 8px;
+    }
     &--1 {
       position: relative;
 
@@ -57,10 +64,13 @@
         content: "";
         display: block;
         position: absolute;
-        top: 90%;
+        top: 92.5%;
         left: 50%;
         transform: translate(-50%, 0);
-        height: 100vh;
+        height: 150vh;
+        @media only screen and (max-width: $bp-sm) {
+          top: -40px;
+        }
         width: 3px;
         background: $color-primary-dark;
         z-index: 5;

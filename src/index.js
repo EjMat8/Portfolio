@@ -12,6 +12,7 @@ import child from "./assets/icons/child.svg";
 import github from "./assets/icons/github.svg";
 import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
+import mobileTouch from "./assets/icons/setting.svg";
 
 skills.generateLogo();
 const image1Container = document.querySelector(".projects__img--1");
@@ -26,9 +27,10 @@ const arrowIcon = document.querySelector(".arrow");
 const childIcon = document.querySelector(".child");
 
 //socials
-const githubIcon = document.querySelector(".github");
-const linkedinIcon = document.querySelector(".linkedin");
-const resumeIcon = document.querySelector(".resume");
+const githubIcon = document.querySelectorAll(".github");
+const linkedinIcon = document.querySelectorAll(".linkedin");
+const resumeIcon = document.querySelectorAll(".resume");
+const mTouch = document.querySelectorAll(".touch");
 
 const nav = document.querySelector(".nav__list");
 
@@ -43,22 +45,22 @@ image4Container.src = forkify;
 fsaIcon.src = fsa;
 childIcon.src = child;
 arrowIcon.src = arrow;
-githubIcon.src = github;
-linkedinIcon.src = linkedin;
-resumeIcon.src = file;
+githubIcon.forEach((el) => (el.src = github));
+linkedinIcon.forEach((el) => (el.src = linkedin));
+resumeIcon.forEach((el) => (el.src = file));
+mTouch.forEach((el) => (el.src = mobileTouch));
 
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
-navItem2.style.top = 4 * (innerHeight / 100) + "vh";
-navItem3.style.top = 4 * (innerHeight / 100) + "vh";
-navItem4.style.top = 4 * (innerHeight / 100) + "vh";
-
-addEventListener("resize", (e) => {
-  navItem2.style.top = 4 * (innerHeight / 100) + "vh";
-  navItem3.style.top = 4 * (innerHeight / 100) + "vh";
-  navItem4.style.top = 4 * (innerHeight / 100) + "vh";
-});
+// navItem2.style.top = "60%";
+// navItem3.style.top = "70%";
+// navItem4.style.top = "80%";
+// addEventListener("resize", (e) => {
+//   navItem2.style.top = 3.95 * (innerHeight / 80) + "vh";
+//   navItem3.style.top = 3.95 * (innerHeight / 80) + "vh";
+//   navItem4.style.top = 3.95 * (innerHeight / 80) + "vh";
+// });
 
 content.addEventListener("scroll", (e) => {
   const scrollMeasure = content.scrollHeight - content.scrollTop;

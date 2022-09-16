@@ -36,8 +36,9 @@ h6 {
 }
 
 .container {
-  // background: red;
+  overflow: hidden;
   display: grid;
+  position: relative;
   grid-template-columns:
     minmax(11rem, 1fr) repeat(8, minmax(min-content, 14rem))
     minmax(11rem, 1fr);
@@ -52,9 +53,17 @@ h6 {
       minmax(3.5rem, 1fr) repeat(8, minmax(min-content, 14rem))
       minmax(3.5rem, 1fr);
   }
+  @media only screen and (max-width: $bp-sm) {
+    grid-template-columns:
+      minmax(1.5rem, 1fr) repeat(8, minmax(min-content, 14rem))
+      minmax(1.5rem, 1fr);
+    // column-gap: 2rem;
+  }
 }
 
 .btn {
+  grid-column: 1/-1;
+  grid-row: 1/-1;
   border: 3px solid $color-primary-dark;
   background: $color-primary;
   color: #fff;
@@ -67,6 +76,13 @@ h6 {
   right: 15.2rem;
   z-index: 25;
   transition: all 0.2s ease-in;
+  #text-lg {
+    display: inline;
+  }
+  #text-sm {
+    display: none;
+  }
+
   @media only screen and (max-width: $bp-xl) {
     top: 3.5rem;
     right: 8.2rem;
@@ -74,5 +90,14 @@ h6 {
   @media only screen and (max-width: $bp-lg) {
     top: 3rem;
     right: 4.2rem;
+  }
+  @media only screen and (max-width: $bp-sm) {
+    right: 2.8rem;
+    #text-lg {
+      display: none;
+    }
+    #text-sm {
+      display: inline;
+    }
   }
 }
