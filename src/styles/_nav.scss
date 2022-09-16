@@ -1,6 +1,7 @@
 .nav {
   padding: 1rem 1rem 0 1rem;
   grid-column: 2 / 3;
+  // background: red;
 
   margin-top: 17.2rem;
   @media only screen and (max-width: $bp-sm) {
@@ -20,7 +21,7 @@
     &--2,
     &--3,
     &--4 {
-      // position: absolute;
+      position: absolute;
       // z-index: 50;
       // top: 32.5rem;
       transition: all 0s linear;

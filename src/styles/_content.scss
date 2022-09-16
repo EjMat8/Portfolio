@@ -74,7 +74,9 @@ section {
   justify-items: center;
   justify-content: start;
   @media only screen and (max-width: $bp-sm) {
-    padding: 10px;
+    padding: 8px;
+    column-gap: 2rem;
+    row-gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
   }
 

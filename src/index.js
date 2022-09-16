@@ -53,9 +53,9 @@ mTouch.forEach((el) => (el.src = mobileTouch));
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
-// navItem2.style.top = "60%";
-// navItem3.style.top = "70%";
-// navItem4.style.top = "80%";
+navItem2.style.top = "60%";
+navItem3.style.top = "70%";
+navItem4.style.top = "80%";
 // addEventListener("resize", (e) => {
 //   navItem2.style.top = 3.95 * (innerHeight / 80) + "vh";
 //   navItem3.style.top = 3.95 * (innerHeight / 80) + "vh";
