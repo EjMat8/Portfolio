@@ -131,29 +131,6 @@ content.addEventListener("scroll", (e) => {
   else sections[4].style.opacity = 0;*/
   // if(scrollTop)
 
-  //Navbar scrolls
-  // if (content.scrollTop < sec1Height) {
-  //   if (content.scrollHeight === scrollMeasure) navItem2.style.top = "40vh";
-  //   else
-  //     navItem2.style.top =
-  //       40 - scrollTop / ((content.scrollHeight - 4960) / 40) + "vh";
-  // } else {
-  //   navItem2.style.top = "0";
-  // }
-
-  // if (scrollMeasure <= 3750 && scrollMeasure >= 3050) {
-  //   navItem3.style.top = 40 - (3750 - scrollMeasure) / 17.5 + "vh";
-  // } else if (scrollMeasure > 3750) {
-  //   navItem3.style.top = "40vh";
-  // } else if (scrollMeasure < 3050) {
-  //   navItem3.style.top = "0";
-  // }
-
-  // if (scrollMeasure <= 2635 && scrollMeasure >= 1915)
-  //   navItem4.style.top = 40 - (2635 - scrollMeasure) / 18 + "vh";
-  // else if (scrollMeasure > 2635) navItem4.style.top = "40vh";
-  // else if (scrollMeasure < 1915) navItem4.style.top = "0";
-
   //Navbar check
   if (sec1Top <= navListTop) {
     document.querySelector(".radio__inp--1").checked = true;
@@ -182,4 +159,12 @@ nav.addEventListener("change", function (e) {
   });
 });
 
-document.querySelector(".btn").addEventListener("click", function () {});
+document.querySelector(".btn").addEventListener("click", function () {
+  content.scrollTo({
+    top:
+      sections[4].getBoundingClientRect().top +
+      content.scrollTop -
+      navList.getBoundingClientRect().top,
+    behavior: "smooth",
+  });
+});
