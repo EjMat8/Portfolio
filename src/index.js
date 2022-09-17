@@ -61,18 +61,14 @@ mTouch.forEach((el) => (el.src = mobileTouch));
 const obs = new IntersectionObserver(
   (entries, observer) => {
     const [entry] = entries;
+    const secNum = entry.target.dataset.sec;
     if (entry.isIntersecting) {
-      entry.target.classList.remove("section-animate");
-      if (+entry.target.dataset.sec === 5) {
-        document.querySelector(
-          `.radio__inp--${+entry.target.dataset.sec - 1}`
-        ).checked = false;
-      } else
-        document.querySelector(
-          `.radio__inp--${entry.target.dataset.sec}`
-        ).checked = true;
+      if (secNum > 1) entry.target.classList.remove("section-animate");
+      if (+secNum === 5) {
+        document.querySelector(`.radio__inp--${+secNum - 1}`).checked = false;
+      } else document.querySelector(`.radio__inp--${secNum}`).checked = true;
     } else {
-      entry.target.classList.add("section-animate");
+      if (secNum > 1) entry.target.classList.add("section-animate");
     }
   },
   {
@@ -81,8 +77,8 @@ const obs = new IntersectionObserver(
   }
 );
 
-for (let i = 1; i < sections.length; i++) {
-  sections[i].classList.add("section-animate");
+for (let i = 0; i < sections.length; i++) {
+  if (i !== 0) sections[i].classList.add("section-animate");
   obs.observe(sections[i]);
 }
 
@@ -131,8 +127,7 @@ content.addEventListener("scroll", (e) => {
   const { top: sec5Top } = sections[4].getBoundingClientRect();
   const { top: navListTop } = navList.getBoundingClientRect();
 
-  if (sec1Top < -1) {
-    console.log("hello");
+  if (sec1Top < -15) {
     labelTexts.forEach((label) => {
       label.style.opacity = 0;
       label.style.transform = "translateX(120%)";
@@ -151,29 +146,29 @@ content.addEventListener("scroll", (e) => {
       ic.style.fill = "black";
     });
   }
-  console.log(
-    "Nav Top: ",
-    navListTop,
-    "\n",
-    "Inner Height",
-    innerHeight,
-    "\n",
-    "Section 1: ",
-    sec1Top,
-    "\n",
-    "Section 2: ",
-    sec2Top,
-    "\n",
-    "Section 3: ",
-    sec3Top,
-    "\n",
-    "Section 4: ",
-    sec4Top,
-    "\n",
-    "Section 5: ",
-    sec5Top,
-    "\n"
-  );
+  // console.log(
+  //   "Nav Top: ",
+  //   navListTop,
+  //   "\n",
+  //   "Inner Height",
+  //   innerHeight,
+  //   "\n",
+  //   "Section 1: ",
+  //   sec1Top,
+  //   "\n",
+  //   "Section 2: ",
+  //   sec2Top,
+  //   "\n",
+  //   "Section 3: ",
+  //   sec3Top,
+  //   "\n",
+  //   "Section 4: ",
+  //   sec4Top,
+  //   "\n",
+  //   "Section 5: ",
+  //   sec5Top,
+  //   "\n"
+  // );
   sections[0].style.opacity = 1 - content.scrollTop / 100;
 
   if (sec2Top <= innerHeight && sec2Top > navListTop) {
