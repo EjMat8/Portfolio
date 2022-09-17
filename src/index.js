@@ -83,10 +83,10 @@ navItem2.style.top = "60%";
 navItem3.style.top = "70%";
 navItem4.style.top = "80%";
 sections[4].style.marginBottom =
-  innerHeight - sections[4].getBoundingClientRect().height - 150 + "px";
+  innerHeight - sections[4].getBoundingClientRect().height - 50 + "px";
 addEventListener("resize", (e) => {
   sections[4].style.marginBottom =
-    innerHeight - sections[4].getBoundingClientRect().height - 150 + "px";
+    innerHeight - sections[4].getBoundingClientRect().height - 50 + "px";
 });
 content.addEventListener("scroll", (e) => {
   // FADES
@@ -113,6 +113,8 @@ content.addEventListener("scroll", (e) => {
   else sections[4].style.opacity = 0;*/
   // if(scrollTop)
 });
+const labelTexts = document.querySelectorAll(".label-text");
+const iconPath = document.querySelectorAll(".icon-path");
 content.addEventListener("scroll", (e) => {
   const { top: sec1Top } = sections[0].getBoundingClientRect();
   const { top: sec2Top } = sections[1].getBoundingClientRect();
@@ -121,6 +123,49 @@ content.addEventListener("scroll", (e) => {
   const { top: sec5Top } = sections[4].getBoundingClientRect();
   const { top: navListTop } = navList.getBoundingClientRect();
 
+  if (sec1Top < -1) {
+    console.log("hello");
+    labelTexts.forEach((label) => {
+      label.style.opacity = 0;
+      label.style.transform = "translateX(120%)";
+      label.style.position = "absolute";
+    });
+    iconPath.forEach((ic) => {
+      ic.style.fill = "#afafafaf";
+    });
+  } else {
+    labelTexts.forEach((label) => {
+      label.style.opacity = 1;
+      label.style.position = "relative";
+      label.style.transform = "translateX(0)";
+    });
+    iconPath.forEach((ic) => {
+      ic.style.fill = "black";
+    });
+  }
+  console.log(
+    "Nav Top: ",
+    navListTop,
+    "\n",
+    "Inner Height",
+    innerHeight,
+    "\n",
+    "Section 1: ",
+    sec1Top,
+    "\n",
+    "Section 2: ",
+    sec2Top,
+    "\n",
+    "Section 3: ",
+    sec3Top,
+    "\n",
+    "Section 4: ",
+    sec4Top,
+    "\n",
+    "Section 5: ",
+    sec5Top,
+    "\n"
+  );
   sections[0].style.opacity = 1 - content.scrollTop / 100;
 
   if (sec2Top <= innerHeight && sec2Top > navListTop) {
@@ -145,20 +190,15 @@ content.addEventListener("scroll", (e) => {
     navItem4.style.top = "80%";
 
   //Navbar check
-  if (sec1Top <= navListTop) {
+  if (sec1Top - navListTop + innerHeight >= 1) {
     document.querySelector(".radio__inp--1").checked = true;
-  }
-  if (sec2Top <= navListTop) {
+  } else if (sec2Top <= navListTop && sec3Top > navListTop) {
     document.querySelector(".radio__inp--2").checked = true;
-  }
-  if (sec3Top <= navListTop) {
+  } else if (sec3Top <= navListTop && sec4Top > navListTop) {
     document.querySelector(".radio__inp--3").checked = true;
-  }
-  if (sec4Top <= navListTop) {
+  } else if (sec4Top <= navListTop && sec5Top > navListTop) {
     document.querySelector(".radio__inp--4").checked = true;
-  }
-  if (sec5Top <= navListTop)
-    document.querySelector(".radio__inp--4").checked = false;
+  } else document.querySelector(".radio__inp--4").checked = false;
 });
 
 nav.addEventListener("change", function (e) {
@@ -177,7 +217,8 @@ document.querySelector(".btn").addEventListener("click", function () {
     top:
       sections[4].getBoundingClientRect().top +
       content.scrollTop -
-      navList.getBoundingClientRect().top,
+      navList.getBoundingClientRect().top +
+      15,
     behavior: "smooth",
   });
 });
