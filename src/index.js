@@ -57,6 +57,27 @@ mTouch.forEach((el) => (el.src = mobileTouch));
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
+
+const obs = new IntersectionObserver(
+  (entries, observer) => {
+    const [entry] = entries;
+    if (entry.isIntersecting) {
+      entry.target.classList.remove("section-animate");
+    } else {
+      entry.target.classList.add("section-animate");
+    }
+  },
+  {
+    threshold: 0.3,
+    root: content,
+  }
+);
+
+for (let i = 1; i < sections.length; i++) {
+  sections[i].classList.add("section-animate");
+  obs.observe(sections[i]);
+}
+
 const navList = document.querySelector(".nav__list");
 navItem2.style.top = "60%";
 navItem3.style.top = "70%";
@@ -67,10 +88,32 @@ addEventListener("resize", (e) => {
   sections[4].style.marginBottom =
     innerHeight - sections[4].getBoundingClientRect().height - 150 + "px";
 });
-
 content.addEventListener("scroll", (e) => {
-  const scrollMeasure = content.scrollHeight - content.scrollTop;
-  const scrollTop = content.scrollHeight - scrollMeasure;
+  // FADES
+  // sections[0].style.opacity = 1 - content.scrollTop / 100;
+  // if (content. >= 325) sections[1].style.opacity = 1;
+  // else sections[1].style.opacity = 0;
+  /*
+  if (scrollTop >= 1910)
+    sections[1].style.opacity = 1 - (scrollTop - 1910) / 100;
+
+  if (scrollTop >= 2300) sections[2].style.opacity = 1;
+  else sections[2].style.opacity = 0;
+
+  if (scrollTop >= 2950)
+    sections[2].style.opacity = 1 - (scrollTop - 2950) / 100;
+
+  if (scrollTop >= 3440) sections[3].style.opacity = 1;
+  else sections[3].style.opacity = 0;
+
+  if (scrollTop >= 3900)
+    sections[3].style.opacity = 1 - (scrollTop - 3900) / 100;
+
+  if (scrollTop >= 4200) sections[4].style.opacity = 1;
+  else sections[4].style.opacity = 0;*/
+  // if(scrollTop)
+});
+content.addEventListener("scroll", (e) => {
   const { top: sec1Top } = sections[0].getBoundingClientRect();
   const { top: sec2Top } = sections[1].getBoundingClientRect();
   const { top: sec3Top } = sections[2].getBoundingClientRect();
@@ -78,12 +121,7 @@ content.addEventListener("scroll", (e) => {
   const { top: sec5Top } = sections[4].getBoundingClientRect();
   const { top: navListTop } = navList.getBoundingClientRect();
 
-  console.log(sections[2].getBoundingClientRect(), content.scrollTop);
-  // console.log(
-  //   sections[2].getBoundingClientRect(),
-  //   navList.getBoundingClientRect(),
-  //   content.scrollTop
-  // );
+  sections[0].style.opacity = 1 - content.scrollTop / 100;
 
   if (sec2Top <= innerHeight && sec2Top > navListTop) {
     navItem2.style.top =
@@ -105,31 +143,6 @@ content.addEventListener("scroll", (e) => {
   } else if (sec4Top <= navListTop) navItem4.style.top = "30%";
   else if (sec4Top > navListTop && sec4Top > innerHeight)
     navItem4.style.top = "80%";
-
-  // FADES
-  /*
-   sections[0].style.opacity = 1 - scrollTop / 100;
-  if (scrollTop >= 325) sections[1].style.opacity = 1;
-  else sections[1].style.opacity = 0;
-
-  if (scrollTop >= 1910)
-    sections[1].style.opacity = 1 - (scrollTop - 1910) / 100;
-
-  if (scrollTop >= 2300) sections[2].style.opacity = 1;
-  else sections[2].style.opacity = 0;
-
-  if (scrollTop >= 2950)
-    sections[2].style.opacity = 1 - (scrollTop - 2950) / 100;
-
-  if (scrollTop >= 3440) sections[3].style.opacity = 1;
-  else sections[3].style.opacity = 0;
-
-  if (scrollTop >= 3900)
-    sections[3].style.opacity = 1 - (scrollTop - 3900) / 100;
-
-  if (scrollTop >= 4200) sections[4].style.opacity = 1;
-  else sections[4].style.opacity = 0;*/
-  // if(scrollTop)
 
   //Navbar check
   if (sec1Top <= navListTop) {
