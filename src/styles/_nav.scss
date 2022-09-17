@@ -43,7 +43,7 @@
   .skill__icon,
   .about__icon {
     display: none;
-    transition: all 0.2s;
+    transition: all 0s;
     path {
       fill: black;
     }
@@ -62,7 +62,7 @@
     // transition: all 0.2s ease-out;
   }
   .label-text {
-    transition: transform 0.3s ease-out, opacity 0.3s ease-out, height 0.3s 0.3s;
+    transition: transform 0.3s ease-out, opacity 0.3s ease-out;
   }
   &__btn {
     display: inline-block;
