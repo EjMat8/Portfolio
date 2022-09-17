@@ -63,6 +63,14 @@ const obs = new IntersectionObserver(
     const [entry] = entries;
     if (entry.isIntersecting) {
       entry.target.classList.remove("section-animate");
+      if (+entry.target.dataset.sec === 5) {
+        document.querySelector(
+          `.radio__inp--${+entry.target.dataset.sec - 1}`
+        ).checked = false;
+      } else
+        document.querySelector(
+          `.radio__inp--${entry.target.dataset.sec}`
+        ).checked = true;
     } else {
       entry.target.classList.add("section-animate");
     }
@@ -188,17 +196,6 @@ content.addEventListener("scroll", (e) => {
   } else if (sec4Top <= navListTop) navItem4.style.top = "30%";
   else if (sec4Top > navListTop && sec4Top > innerHeight)
     navItem4.style.top = "80%";
-
-  //Navbar check
-  if (sec1Top - navListTop + innerHeight >= 1) {
-    document.querySelector(".radio__inp--1").checked = true;
-  } else if (sec2Top <= navListTop && sec3Top > navListTop) {
-    document.querySelector(".radio__inp--2").checked = true;
-  } else if (sec3Top <= navListTop && sec4Top > navListTop) {
-    document.querySelector(".radio__inp--3").checked = true;
-  } else if (sec4Top <= navListTop && sec5Top > navListTop) {
-    document.querySelector(".radio__inp--4").checked = true;
-  } else document.querySelector(".radio__inp--4").checked = false;
 });
 
 nav.addEventListener("change", function (e) {
