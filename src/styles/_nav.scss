@@ -37,13 +37,26 @@
     height: 100%;
 
     // background: red;
+    position: relative;
   }
+  .project__icon,
+  .skill__icon,
+  .about__icon {
+    display: none;
+    path {
+      fill: black;
+    }
+    @media only screen and (max-width: $bp-sm) {
+      display: inline-block;
+      margin-right: 4px;
+    }
+  }
+
   label {
     display: flex;
     align-items: center;
     @media only screen and (max-width: $bp-sm) {
       font-size: 1.55rem;
-      color: #afafaf;
     }
   }
   &__btn {

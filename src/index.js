@@ -22,6 +22,10 @@ const image4Container = document.querySelector(".projects__img--4");
 const sections = document.querySelectorAll("section");
 const content = document.querySelector(".content");
 
+// const projectIcon = document.querySelector(".project-icon");
+// const skillIcon = document.querySelector(".skill-icon");
+// const aboutIcon = document.querySelector(".about-icon");
+
 const fsaIcon = document.querySelector(".fsa");
 const arrowIcon = document.querySelector(".arrow");
 const childIcon = document.querySelector(".child");
@@ -53,20 +57,54 @@ mTouch.forEach((el) => (el.src = mobileTouch));
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
+const navList = document.querySelector(".nav__list");
 navItem2.style.top = "60%";
 navItem3.style.top = "70%";
 navItem4.style.top = "80%";
-// addEventListener("resize", (e) => {
-//   navItem2.style.top = 3.95 * (innerHeight / 80) + "vh";
-//   navItem3.style.top = 3.95 * (innerHeight / 80) + "vh";
-//   navItem4.style.top = 3.95 * (innerHeight / 80) + "vh";
-// });
+sections[4].style.marginBottom =
+  innerHeight - sections[4].getBoundingClientRect().height - 150 + "px";
+addEventListener("resize", (e) => {
+  sections[4].style.marginBottom =
+    innerHeight - sections[4].getBoundingClientRect().height - 150 + "px";
+});
 
 content.addEventListener("scroll", (e) => {
   const scrollMeasure = content.scrollHeight - content.scrollTop;
   const scrollTop = content.scrollHeight - scrollMeasure;
-  const { height: sec1Height } = sections[0].getBoundingClientRect();
-  console.log("scrollMeasure", scrollMeasure, "scroll top", content.scrollTop);
+  const { top: sec1Top } = sections[0].getBoundingClientRect();
+  const { top: sec2Top } = sections[1].getBoundingClientRect();
+  const { top: sec3Top } = sections[2].getBoundingClientRect();
+  const { top: sec4Top } = sections[3].getBoundingClientRect();
+  const { top: sec5Top } = sections[4].getBoundingClientRect();
+  const { top: navListTop } = navList.getBoundingClientRect();
+
+  console.log(sections[2].getBoundingClientRect(), content.scrollTop);
+  // console.log(
+  //   sections[2].getBoundingClientRect(),
+  //   navList.getBoundingClientRect(),
+  //   content.scrollTop
+  // );
+
+  if (sec2Top <= innerHeight && sec2Top > navListTop) {
+    navItem2.style.top =
+      (50 * (sec2Top - navListTop)) / (innerHeight - navListTop) + 10 + "%";
+  } else if (sec2Top <= navListTop) navItem2.style.top = "10%";
+  else if (sec2Top > navListTop && sec2Top > innerHeight)
+    navItem2.style.top = "60%";
+
+  if (sec3Top <= innerHeight && sec3Top > navListTop) {
+    navItem3.style.top =
+      (50 * (sec3Top - navListTop)) / (innerHeight - navListTop) + 20 + "%";
+  } else if (sec3Top <= navListTop) navItem3.style.top = "20%";
+  else if (sec3Top > navListTop && sec3Top > innerHeight)
+    navItem3.style.top = "70%";
+
+  if (sec4Top <= innerHeight && sec4Top > navListTop) {
+    navItem4.style.top =
+      (50 * (sec4Top - navListTop)) / (innerHeight - navListTop) + 30 + "%";
+  } else if (sec4Top <= navListTop) navItem4.style.top = "30%";
+  else if (sec4Top > navListTop && sec4Top > innerHeight)
+    navItem4.style.top = "80%";
 
   // FADES
   /*
@@ -117,23 +155,31 @@ content.addEventListener("scroll", (e) => {
   // else if (scrollMeasure < 1915) navItem4.style.top = "0";
 
   //Navbar check
-  if (scrollMeasure <= content.scrollHeight && scrollMeasure >= 5085) {
+  if (sec1Top <= navListTop) {
     document.querySelector(".radio__inp--1").checked = true;
-  } else if (scrollMeasure < 5085 && scrollMeasure >= 3150) {
+  }
+  if (sec2Top <= navListTop) {
     document.querySelector(".radio__inp--2").checked = true;
-  } else if (scrollMeasure < 3150 && scrollMeasure >= 1980) {
+  }
+  if (sec3Top <= navListTop) {
     document.querySelector(".radio__inp--3").checked = true;
-  } else if (scrollMeasure < 1980 && scrollMeasure >= 990) {
+  }
+  if (sec4Top <= navListTop) {
     document.querySelector(".radio__inp--4").checked = true;
-  } else if (scrollMeasure < 990)
+  }
+  if (sec5Top <= navListTop)
     document.querySelector(".radio__inp--4").checked = false;
 });
 
 nav.addEventListener("change", function (e) {
   const num = +e.target.dataset.section;
-  const position = num ? content.scrollHeight - num : 0;
   content.scrollTo({
-    top: position,
+    top:
+      sections[num].getBoundingClientRect().top +
+      content.scrollTop -
+      navList.getBoundingClientRect().top,
     behavior: "smooth",
   });
 });
+
+document.querySelector(".btn").addEventListener("click", function () {});
