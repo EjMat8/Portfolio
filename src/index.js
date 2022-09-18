@@ -13,6 +13,7 @@ import github from "./assets/icons/github.svg";
 import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import mobileTouch from "./assets/icons/setting.svg";
+import franzresume from "./assets/franzresume.pdf";
 
 skills.generateLogo();
 const image1Container = document.querySelector(".projects__img--1");
@@ -21,6 +22,7 @@ const image3Container = document.querySelector(".projects__img--3");
 const image4Container = document.querySelector(".projects__img--4");
 const sections = document.querySelectorAll("section");
 const content = document.querySelector(".content");
+const resumeDownload = document.querySelectorAll(".resume-download");
 
 // const projectIcon = document.querySelector(".project-icon");
 // const skillIcon = document.querySelector(".skill-icon");
@@ -53,7 +55,7 @@ githubIcon.forEach((el) => (el.src = github));
 linkedinIcon.forEach((el) => (el.src = linkedin));
 resumeIcon.forEach((el) => (el.src = file));
 mTouch.forEach((el) => (el.src = mobileTouch));
-
+resumeDownload.forEach((el) => (el.href = franzresume));
 // sections[1].style.opacity = 0;
 // sections[2].style.opacity = 0;
 // navItem1.style.top = "32.5rem";
@@ -126,26 +128,28 @@ content.addEventListener("scroll", (e) => {
   const { top: sec4Top } = sections[3].getBoundingClientRect();
   const { top: sec5Top } = sections[4].getBoundingClientRect();
   const { top: navListTop } = navList.getBoundingClientRect();
-
-  if (sec1Top < -15) {
-    labelTexts.forEach((label) => {
-      label.style.opacity = 0;
-      label.style.transform = "translateX(120%)";
-      label.style.position = "absolute";
-    });
-    iconPath.forEach((ic) => {
-      ic.style.fill = "#afafafaf";
-    });
-  } else {
-    labelTexts.forEach((label) => {
-      label.style.opacity = 1;
-      label.style.position = "relative";
-      label.style.transform = "translateX(0)";
-    });
-    iconPath.forEach((ic) => {
-      ic.style.fill = "black";
-    });
+  if (innerWidth < 601) {
+    if (sec1Top < -15) {
+      labelTexts.forEach((label) => {
+        label.style.opacity = 0;
+        label.style.transform = "translateX(120%)";
+        label.style.position = "absolute";
+      });
+      iconPath.forEach((ic) => {
+        ic.style.fill = "#afafafaf";
+      });
+    } else {
+      labelTexts.forEach((label) => {
+        label.style.opacity = 1;
+        label.style.position = "relative";
+        label.style.transform = "translateX(0)";
+      });
+      iconPath.forEach((ic) => {
+        ic.style.fill = "black";
+      });
+    }
   }
+
   // console.log(
   //   "Nav Top: ",
   //   navListTop,
