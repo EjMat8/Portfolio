@@ -153,13 +153,25 @@ section {
 
     &:hover .projects__tools {
       opacity: 1;
+      @media only screen and (max-width: $bp-lg) {
+        opacity: 0;
+      }
     }
 
     &:hover + .projects__desc h2 {
       color: $color-primary;
+      @media only screen and (max-width: $bp-lg) {
+        color: #000;
+      }
     }
     &:hover .touch {
       opacity: 0;
+      @media only screen and (max-width: $bp-lg) {
+        opacity: 1;
+      }
+    }
+    @media only screen and (max-width: $bp-lg) {
+      cursor: pointer;
     }
     @media only screen and (max-width: $bp-sm) {
       margin-bottom: 1.8rem;
@@ -220,6 +232,9 @@ section {
       font-weight: 300;
       margin-bottom: 3.8rem;
       width: 100%;
+      @media only screen and (max-width: $bp-lg) {
+        margin-bottom: 1.5rem;
+      }
     }
     a {
       &:not(:last-child) {

@@ -20,13 +20,10 @@ const image1Container = document.querySelector(".projects__img--1");
 const image2Container = document.querySelector(".projects__img--2");
 const image3Container = document.querySelector(".projects__img--3");
 const image4Container = document.querySelector(".projects__img--4");
+const sectionProjects = document.querySelector(".section-projects");
 const sections = document.querySelectorAll("section");
 const content = document.querySelector(".content");
 const resumeDownload = document.querySelectorAll(".resume-download");
-
-// const projectIcon = document.querySelector(".project-icon");
-// const skillIcon = document.querySelector(".skill-icon");
-// const aboutIcon = document.querySelector(".about-icon");
 
 const fsaIcon = document.querySelector(".fsa");
 const arrowIcon = document.querySelector(".arrow");
@@ -44,6 +41,22 @@ const navItem2 = document.querySelector(".nav__item--2");
 const navItem3 = document.querySelector(".nav__item--3");
 const navItem4 = document.querySelector(".nav__item--4");
 
+sectionProjects.addEventListener("click", (e) => {
+  if (innerWidth > 1000) return;
+  const selected = e.target.closest(".projects__img-container");
+  if (!selected) return;
+  const selectedNum = selected.dataset.tools;
+  const heading = document.querySelector(`.projects__heading-${selectedNum}`);
+  const tools = document.querySelector(`.projects__tools--${selectedNum}`);
+  const touch = document.querySelector(`.touch--${selectedNum}`);
+  heading.style.color =
+    getComputedStyle(heading).color === "rgb(0, 0, 0)"
+      ? "#2d5bc4"
+      : "rgb(0, 0, 0)";
+  tools.style.opacity = getComputedStyle(tools).opacity === "0" ? "1" : "0";
+  touch.style.opacity = getComputedStyle(touch).opacity === "0" ? "1" : "0";
+});
+
 image1Container.src = cryptozon;
 image2Container.src = movie;
 image3Container.src = tea;
@@ -56,9 +69,6 @@ linkedinIcon.forEach((el) => (el.src = linkedin));
 resumeIcon.forEach((el) => (el.src = file));
 mTouch.forEach((el) => (el.src = mobileTouch));
 resumeDownload.forEach((el) => (el.href = franzresume));
-// sections[1].style.opacity = 0;
-// sections[2].style.opacity = 0;
-// navItem1.style.top = "32.5rem";
 
 const obs = new IntersectionObserver(
   (entries, observer) => {
@@ -94,31 +104,7 @@ addEventListener("resize", (e) => {
   sections[4].style.marginBottom =
     innerHeight - sections[4].getBoundingClientRect().height - 50 + "px";
 });
-content.addEventListener("scroll", (e) => {
-  // FADES
-  // sections[0].style.opacity = 1 - content.scrollTop / 100;
-  // if (content. >= 325) sections[1].style.opacity = 1;
-  // else sections[1].style.opacity = 0;
-  /*
-  if (scrollTop >= 1910)
-    sections[1].style.opacity = 1 - (scrollTop - 1910) / 100;
 
-  if (scrollTop >= 2300) sections[2].style.opacity = 1;
-  else sections[2].style.opacity = 0;
-
-  if (scrollTop >= 2950)
-    sections[2].style.opacity = 1 - (scrollTop - 2950) / 100;
-
-  if (scrollTop >= 3440) sections[3].style.opacity = 1;
-  else sections[3].style.opacity = 0;
-
-  if (scrollTop >= 3900)
-    sections[3].style.opacity = 1 - (scrollTop - 3900) / 100;
-
-  if (scrollTop >= 4200) sections[4].style.opacity = 1;
-  else sections[4].style.opacity = 0;*/
-  // if(scrollTop)
-});
 const labelTexts = document.querySelectorAll(".label-text");
 const iconPath = document.querySelectorAll(".icon-path");
 
@@ -153,29 +139,6 @@ content.addEventListener("scroll", (e) => {
     }
   }
 
-  // console.log(
-  //   "Nav Top: ",
-  //   navListTop,
-  //   "\n",
-  //   "Inner Height",
-  //   innerHeight,
-  //   "\n",
-  //   "Section 1: ",
-  //   sec1Top,
-  //   "\n",
-  //   "Section 2: ",
-  //   sec2Top,
-  //   "\n",
-  //   "Section 3: ",
-  //   sec3Top,
-  //   "\n",
-  //   "Section 4: ",
-  //   sec4Top,
-  //   "\n",
-  //   "Section 5: ",
-  //   sec5Top,
-  //   "\n"
-  // );
   sections[0].style.opacity = 1 - content.scrollTop / 100;
 
   if (sec2Top <= innerHeight && sec2Top > navListTop) {
