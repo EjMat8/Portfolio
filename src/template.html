@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title><%= htmlWebpackPlugin.options.title %></title>
+    <script defer src="https://smtpjs.com/v3/smtp.js"></script>
   </head>
   <body>
+    <div class="toast toast-animate"></div>
     <div class="container">
       <button class="btn">
         <span id="text-lg">work with me</span
@@ -128,13 +130,19 @@
           </p>
           <div class="socials-me">
             <div>
-              <img class="linkedin" alt="icons" /><span class="label-social"
-                >LinkedIn</span
+              <img class="linkedin" alt="icons" /><a
+                href="https://www.linkedin.com/in/franzmatugas/"
+                target="_blank"
+                class="label-social"
+                >LinkedIn</a
               >
             </div>
             <div>
-              <img class="github" alt="icons" /><span class="label-social"
-                >GitHub</span
+              <img class="github" alt="icons" /><a
+                href="https://github.com/EjMat8/"
+                target="_blank"
+                class="label-social"
+                >GitHub</a
               >
             </div>
             <div>
@@ -368,13 +376,19 @@
           </div>
           <div class="socials">
             <div>
-              <img class="linkedin" alt="icons" /><span class="label-social"
-                >LinkedIn</span
+              <img class="linkedin" alt="icons" /><a
+                href="https://www.linkedin.com/in/franzmatugas/"
+                target="_blank"
+                class="label-social"
+                >LinkedIn</a
               >
             </div>
             <div>
-              <img class="github" alt="icons" /><span class="label-social"
-                >GitHub</span
+              <img class="github" alt="icons" /><a
+                href="https://github.com/EjMat8/"
+                target="_blank"
+                class="label-social"
+                >GitHub</a
               >
             </div>
             <div>
@@ -393,9 +407,9 @@
             also if you have any questions, comments or if you want to work on
             something together, shoot me a message!
           </p>
-          <form>
-            <input type="text" placeholder="Name" />
-            <input type="email" placeholder="Email" />
+          <form class="contact-form" method="post">
+            <input id="name" type="text" placeholder="Name" />
+            <input id="email" type="email" placeholder="Email" />
             <textarea
               name="message"
               id="message"
@@ -403,7 +417,7 @@
               rows="10"
               placeholder="Message"
             ></textarea>
-            <button type="button">Send</button>
+            <button type="submit">Send</button>
           </form>
         </section>
       </div>

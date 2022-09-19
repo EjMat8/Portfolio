@@ -1,7 +1,7 @@
 import "./styles/main.scss";
 
 import skills from "./icons";
-
+import contactForm from "./contact";
 import cryptozon from "./assets/cryptozon.png";
 import forkify from "./assets/forkify.jpg";
 import movie from "./assets/movie.jpg";
@@ -121,6 +121,9 @@ content.addEventListener("scroll", (e) => {
 });
 const labelTexts = document.querySelectorAll(".label-text");
 const iconPath = document.querySelectorAll(".icon-path");
+
+contactForm.run();
+
 content.addEventListener("scroll", (e) => {
   const { top: sec1Top } = sections[0].getBoundingClientRect();
   const { top: sec2Top } = sections[1].getBoundingClientRect();
