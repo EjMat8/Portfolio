@@ -15,32 +15,56 @@ import linkedin from "./assets/icons/linkedin.svg";
 import mobileTouch from "./assets/icons/setting.svg";
 import franzresume from "./assets/franzresume.pdf";
 
+// Load skills images
 skills.generateLogo();
+
+const sectionProjects = document.querySelector(".section-projects");
+const sections = document.querySelectorAll("section");
+
 const image1Container = document.querySelector(".projects__img--1");
 const image2Container = document.querySelector(".projects__img--2");
 const image3Container = document.querySelector(".projects__img--3");
 const image4Container = document.querySelector(".projects__img--4");
-const sectionProjects = document.querySelector(".section-projects");
-const sections = document.querySelectorAll("section");
+
 const content = document.querySelector(".content");
 const resumeDownload = document.querySelectorAll(".resume-download");
+const mTouch = document.querySelectorAll(".touch");
 
 const fsaIcon = document.querySelector(".fsa");
 const arrowIcon = document.querySelector(".arrow");
 const childIcon = document.querySelector(".child");
 
-//socials
+const labelTexts = document.querySelectorAll(".label-text");
+const iconPath = document.querySelectorAll(".icon-path");
+
+//socials elements
 const githubIcon = document.querySelectorAll(".github");
 const linkedinIcon = document.querySelectorAll(".linkedin");
 const resumeIcon = document.querySelectorAll(".resume");
-const mTouch = document.querySelectorAll(".touch");
 
-const nav = document.querySelector(".nav__list");
-
+const navList = document.querySelector(".nav__list");
 const navItem2 = document.querySelector(".nav__item--2");
 const navItem3 = document.querySelector(".nav__item--3");
 const navItem4 = document.querySelector(".nav__item--4");
 
+// Loading asset/resources
+image1Container.src = cryptozon;
+image2Container.src = movie;
+image3Container.src = tea;
+image4Container.src = forkify;
+fsaIcon.src = fsa;
+childIcon.src = child;
+arrowIcon.src = arrow;
+githubIcon.forEach((el) => (el.src = github));
+linkedinIcon.forEach((el) => (el.src = linkedin));
+resumeIcon.forEach((el) => (el.src = file));
+mTouch.forEach((el) => (el.src = mobileTouch));
+resumeDownload.forEach((el) => (el.href = franzresume));
+
+// Enables contact form functions
+contactForm.run();
+
+// Mobile Responsive Touch For Displaying Tools
 sectionProjects.addEventListener("click", (e) => {
   if (innerWidth > 1000) return;
   const selected = e.target.closest(".projects__img-container");
@@ -57,19 +81,8 @@ sectionProjects.addEventListener("click", (e) => {
   touch.style.opacity = getComputedStyle(touch).opacity === "0" ? "1" : "0";
 });
 
-image1Container.src = cryptozon;
-image2Container.src = movie;
-image3Container.src = tea;
-image4Container.src = forkify;
-fsaIcon.src = fsa;
-childIcon.src = child;
-arrowIcon.src = arrow;
-githubIcon.forEach((el) => (el.src = github));
-linkedinIcon.forEach((el) => (el.src = linkedin));
-resumeIcon.forEach((el) => (el.src = file));
-mTouch.forEach((el) => (el.src = mobileTouch));
-resumeDownload.forEach((el) => (el.href = franzresume));
-
+// Scroll Animation for Fade In and Selected Navbar
+sections[0].style.opacity = 1 - content.scrollTop / 100;
 const obs = new IntersectionObserver(
   (entries, observer) => {
     const [entry] = entries;
@@ -94,7 +107,7 @@ for (let i = 0; i < sections.length; i++) {
   obs.observe(sections[i]);
 }
 
-const navList = document.querySelector(".nav__list");
+// Responsive Measurements for nav and last section
 navItem2.style.top = "60%";
 navItem3.style.top = "70%";
 navItem4.style.top = "80%";
@@ -105,17 +118,12 @@ addEventListener("resize", (e) => {
     innerHeight - sections[4].getBoundingClientRect().height - 50 + "px";
 });
 
-const labelTexts = document.querySelectorAll(".label-text");
-const iconPath = document.querySelectorAll(".icon-path");
-
-contactForm.run();
-
+// Animation for navbar
 content.addEventListener("scroll", (e) => {
   const { top: sec1Top } = sections[0].getBoundingClientRect();
   const { top: sec2Top } = sections[1].getBoundingClientRect();
   const { top: sec3Top } = sections[2].getBoundingClientRect();
   const { top: sec4Top } = sections[3].getBoundingClientRect();
-  const { top: sec5Top } = sections[4].getBoundingClientRect();
   const { top: navListTop } = navList.getBoundingClientRect();
   if (innerWidth < 601) {
     if (sec1Top < -15) {
@@ -139,8 +147,6 @@ content.addEventListener("scroll", (e) => {
     }
   }
 
-  sections[0].style.opacity = 1 - content.scrollTop / 100;
-
   if (sec2Top <= innerHeight && sec2Top > navListTop) {
     navItem2.style.top =
       (50 * (sec2Top - navListTop)) / (innerHeight - navListTop) + 10 + "%";
@@ -163,7 +169,8 @@ content.addEventListener("scroll", (e) => {
     navItem4.style.top = "80%";
 });
 
-nav.addEventListener("change", function (e) {
+// Scroll to behavior with navbar
+navList.addEventListener("change", function (e) {
   const num = +e.target.dataset.section;
   content.scrollTo({
     top:
@@ -174,6 +181,7 @@ nav.addEventListener("change", function (e) {
   });
 });
 
+// Scroll to contact page with button
 document.querySelector(".btn").addEventListener("click", function () {
   content.scrollTo({
     top:

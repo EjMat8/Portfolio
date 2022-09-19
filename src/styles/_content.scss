@@ -11,7 +11,6 @@
   }
 
   overflow-y: scroll;
-  // position: relative;
   height: 100vh;
   &::-webkit-scrollbar {
     display: none;
@@ -39,20 +38,8 @@ section {
   @media only screen and (max-width: $bp-sm) {
     padding-top: 10.2rem;
   }
-  // background: aquamarine;
 }
-// .section-projects {
-//   background: orchid;
-// }
-// .section-about {
-//   background: goldenrod;
-// }
-// .section-skills {
-//   background: chartreuse;
-// }
-// .section-contact {
-//   background: lightcoral;
-// }
+
 .section-projects,
 .section-about,
 .section-skills {
@@ -65,7 +52,6 @@ section {
 
 .section-contact {
   padding-bottom: 1.5rem;
-  // height: 90vh;
 }
 
 .skills {
@@ -366,8 +352,6 @@ section {
 }
 
 .contact {
-  // background: red;
-  // margin-bottom: 22vh;
   h2 {
     text-decoration: underline;
     font-size: 4.8rem;
@@ -397,7 +381,6 @@ section {
       font-size: 1.6rem;
     }
     input {
-      // max-height: 4rem;
       padding: 0.9rem;
       border-radius: 5px;
       border: 3px solid $color-primary-dark;

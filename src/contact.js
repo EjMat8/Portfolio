@@ -1,8 +1,6 @@
-//e353a401-cb0f-42b1-81e1-ed70421dfd49
 class ContactForm {
   constructor() {
     this.form = document.querySelector(".contact-form");
-    //inputs
     this.name = document.getElementById("name");
     this.email = document.getElementById("email");
     this.message = document.getElementById("message");

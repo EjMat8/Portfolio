@@ -1,7 +1,6 @@
 .nav {
   padding: 1rem 1rem 0 1rem;
   grid-column: 2 / 3;
-  // background: red;
 
   margin-top: 17.2rem;
   @media only screen and (max-width: $bp-sm) {
@@ -24,7 +23,7 @@
     &--4 {
       position: absolute;
       z-index: 50;
-      // top: 32.5rem;
+
       transition: all 0s linear;
     }
   }
@@ -36,7 +35,6 @@
     gap: 4rem;
     height: 100%;
 
-    // background: red;
     position: relative;
   }
   .project__icon,
@@ -59,7 +57,6 @@
     @media only screen and (max-width: $bp-sm) {
       font-size: 1.55rem;
     }
-    // transition: all 0.2s ease-out;
   }
   .label-text {
     transition: transform 0.3s ease-out, opacity 0.3s ease-out;
@@ -70,7 +67,7 @@
     width: 2.4rem;
     border-radius: 50%;
     border: 3px solid $color-primary-dark;
-    // overflow: hidden;
+
     margin-left: 2.4rem;
     z-index: 10;
     cursor: pointer;
