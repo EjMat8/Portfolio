@@ -154,6 +154,7 @@ section {
     &:hover .projects__tools {
       opacity: 1;
     }
+
     &:hover + .projects__desc h2 {
       color: $color-primary;
     }
@@ -274,15 +275,17 @@ section {
   }
   .socials-me {
     display: none;
-    div {
+    .social__link {
       display: flex;
       flex-direction: column;
       align-items: start;
+      text-decoration: none;
       cursor: pointer;
       &:not(last-child) {
         margin-bottom: 1.8rem;
       }
     }
+
     @media only screen and (max-width: $bp-sm) {
       display: block;
     }
@@ -327,11 +330,12 @@ section {
     margin-top: 5.6rem;
     display: flex;
     margin-bottom: 6.7rem;
-    div {
+    .socials__link--about {
       display: flex;
       flex-direction: column;
       align-items: center;
       cursor: pointer;
+      text-decoration: none;
       &:not(:last-child) {
         margin-right: 4.3rem;
       }

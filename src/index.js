@@ -220,4 +220,10 @@ document.querySelector(".btn").addEventListener("click", function () {
       15,
     behavior: "smooth",
   });
+  setTimeout(() => {
+    document.querySelector(`.radio__inp--1`).checked = false;
+    document.querySelector(`.radio__inp--2`).checked = false;
+    document.querySelector(`.radio__inp--3`).checked = false;
+    document.querySelector(`.radio__inp--4`).checked = false;
+  }, 500);
 });
