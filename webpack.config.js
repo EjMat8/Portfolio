@@ -48,7 +48,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      title: "Portfolio",
+      title: "Franz Matugas",
       filename: "index.html",
       template: "src/template.html",
     }),
