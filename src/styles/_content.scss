@@ -41,9 +41,11 @@ section {
 }
 
 .section-projects,
-.section-about,
 .section-skills {
   margin-bottom: 60rem;
+}
+.section-about {
+  margin-bottom: 30rem;
 }
 
 .section-animate {
@@ -60,7 +62,7 @@ section {
 
   padding: 5px;
 
-  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(14.9rem, 1fr));
   column-gap: 4rem;
   row-gap: 4rem;
   justify-items: center;
@@ -358,6 +360,10 @@ section {
     margin-bottom: 1rem;
     a {
       color: #000;
+      transition: all 0.2s ease-out;
+      &:hover {
+        color: $color-primary;
+      }
     }
     @media only screen and (max-width: $bp-sm) {
       font-size: 3.11rem;

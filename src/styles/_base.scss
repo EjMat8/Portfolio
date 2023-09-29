@@ -61,8 +61,6 @@ h6 {
 }
 
 .btn {
-  grid-column: 1/-1;
-  grid-row: 1/-1;
   border: 3px solid $color-primary-dark;
   background: $color-primary;
   color: #fff;
@@ -70,11 +68,36 @@ h6 {
   font-size: 1.9rem;
   padding: 0.8rem 1.6rem;
   cursor: pointer;
-  position: absolute;
-  top: 4.8rem;
-  right: 15.2rem;
-  z-index: 25;
+
   transition: all 0.2s ease-in;
+
+  &--nav {
+    position: absolute;
+    top: 4.8rem;
+    right: 15.2rem;
+    z-index: 25;
+    grid-column: 1/-1;
+    grid-row: 1/-1;
+  }
+
+  &--contact {
+    display: inline-block;
+    margin-top: 0.4rem;
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 2.2rem;
+    border-radius: 60px;
+    background: #fff;
+    border-color: $color-primary;
+    color: $color-primary;
+    transition: all 0.2s ease-out;
+    &:hover {
+      background: $color-primary;
+      border-color: $color-primary-dark;
+      color: #fff;
+    }
+  }
+
   #text-lg {
     display: inline;
   }

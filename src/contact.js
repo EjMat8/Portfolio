@@ -44,7 +44,7 @@ class ContactForm {
       if (error) throw new Error(error.split(".").join("<br/>"));
 
       const res = await Email.send({
-        SecureToken: "698ee1fd-2fe2-42b9-a863-6ec48fb03a0e",
+        SecureToken: "79a737ca-4221-47d9-937b-cb3f629ab904",
         To: "franzelijahmatugas@gmail.com",
         From: "franzelijahmatugas@gmail.com",
         Subject: `${nameVal}: ${emailVal}`,
