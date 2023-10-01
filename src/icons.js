@@ -8,6 +8,8 @@ import redux from "./assets/logos/redux.png";
 import javascript from "./assets/logos/javascript.png";
 // import mongo from "./assets/logos/mongo.png";
 // import mongoose from "./assets/logos/mongoose.png";
+import node from "./assets/logos/nodejs.png";
+import express from "./assets/logos/express.png";
 import next from "./assets/logos/next.png";
 import react from "./assets/logos/react.png";
 import postgres from "./assets/logos/postgres.png";
@@ -22,6 +24,8 @@ class Logo {
       react,
       redux,
       next,
+      node,
+      express,
       sequelize,
       postgres,
       git,

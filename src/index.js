@@ -14,6 +14,7 @@ import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import mobileTouch from "./assets/icons/setting.svg";
 import franzresume from "./assets/franzresume.pdf";
+import scu from "./assets/icons/scu.svg";
 
 // Load skills images
 skills.generateLogo();
@@ -31,6 +32,7 @@ const resumeDownload = document.querySelectorAll(".resume-download");
 const mTouch = document.querySelectorAll(".touch");
 
 const fsaIcon = document.querySelector(".fsa");
+const scuIcon = document.querySelector(".scu");
 const arrowIcon = document.querySelector(".arrow");
 const childIcon = document.querySelector(".child");
 
@@ -52,6 +54,7 @@ image1Container.src = cryptozon;
 image2Container.src = movie;
 image3Container.src = tea;
 image4Container.src = forkify;
+scuIcon.src = scu;
 fsaIcon.src = fsa;
 childIcon.src = child;
 arrowIcon.src = arrow;

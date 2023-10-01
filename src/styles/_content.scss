@@ -62,9 +62,9 @@ section {
 
   padding: 5px;
 
-  grid-template-columns: repeat(auto-fill, minmax(14.9rem, 1fr));
-  column-gap: 4rem;
-  row-gap: 4rem;
+  grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr));
+  column-gap: 3.5rem;
+  row-gap: 3.5rem;
   justify-items: center;
   justify-content: start;
   @media only screen and (max-width: $bp-sm) {
@@ -172,6 +172,7 @@ section {
     display: block;
     object-fit: cover;
   }
+
   .touch {
     position: absolute;
     bottom: 5px;
