@@ -13,7 +13,7 @@ import github from "./assets/icons/github.svg";
 import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
 import mobileTouch from "./assets/icons/setting.svg";
-import franzresume from "./assets/franzresume.pdf";
+import franzresume from "./assets/EJ_Resume.pdf";
 import scu from "./assets/icons/scu.svg";
 
 // Load skills images

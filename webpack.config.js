@@ -50,6 +50,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Franz Matugas",
       filename: "index.html",
+      favicon: "src/assets/favicon.png",
       template: "src/template.html",
     }),
   ],
