@@ -2,16 +2,18 @@ import "./styles/main.scss";
 
 import skills from "./icons";
 import contactForm from "./contact";
+import ecommute from "./assets/ecomm.png";
 import cryptozon from "./assets/cryptozon.png";
 import forkify from "./assets/forkify.jpg";
 import movie from "./assets/movie.jpg";
 import tea from "./assets/tea.png";
 import fsa from "./assets/icons/fsa.svg";
 import arrow from "./assets/icons/arrow.svg";
-import child from "./assets/icons/child.svg";
 import github from "./assets/icons/github.svg";
 import file from "./assets/icons/file.svg";
 import linkedin from "./assets/icons/linkedin.svg";
+import coder from "./assets/icons/coder.svg";
+import teacher from "./assets/icons/teacher.svg";
 import mobileTouch from "./assets/icons/setting.svg";
 import franzresume from "./assets/EJ_Resume.pdf";
 import scu from "./assets/icons/scu.svg";
@@ -26,6 +28,7 @@ const image1Container = document.querySelector(".projects__img--1");
 const image2Container = document.querySelector(".projects__img--2");
 const image3Container = document.querySelector(".projects__img--3");
 const image4Container = document.querySelector(".projects__img--4");
+const image5Container = document.querySelector(".projects__img--5");
 
 const content = document.querySelector(".content");
 const resumeDownload = document.querySelectorAll(".resume-download");
@@ -50,14 +53,15 @@ const navItem3 = document.querySelector(".nav__item--3");
 const navItem4 = document.querySelector(".nav__item--4");
 
 // Loading asset/resources
-image1Container.src = cryptozon;
-image2Container.src = movie;
+image1Container.src = ecommute;
+image2Container.src = cryptozon;
 image3Container.src = tea;
 image4Container.src = forkify;
+image5Container.src = movie;
 scuIcon.src = scu;
 fsaIcon.src = fsa;
-childIcon.src = child;
-arrowIcon.src = arrow;
+childIcon.src = coder;
+arrowIcon.src = teacher;
 githubIcon.forEach((el) => (el.src = github));
 linkedinIcon.forEach((el) => (el.src = linkedin));
 resumeIcon.forEach((el) => (el.src = file));

@@ -1,0 +1,56 @@
+ <div class="projects__item">
+            <div class="projects__img-container" data-tools="1">
+              <img
+                class="projects__img projects__img--1"
+                alt="project_picture"
+              />
+              <div class="projects__tools projects__tools--1">
+                ReactJS &#x2022; NextJS &#x2022; Redux &#x2022; PostgreSQL<br />
+                Sequelize &#x2022; Moralis &#x2022; Thirdweb &#x2022; ChakraUI
+              </div>
+              <img class="touch touch--1" alt="mobile-touch" />
+            </div>
+
+            <div class="projects__desc">
+              <h2 class="projects__heading-1">Cryptozon</h2>
+              <p>
+                This application integrates the connectivity that social media
+                provides into an NFT Marketplace.
+              </p>
+              <div class="projects__links">
+                <a href="https://youtu.be/HnYqz4mWFzY" target="_blank"
+                  >demo presentation</a
+                ><a
+                  href="https://github.com/2202-Capstone/cryptozon-new"
+                  target="_blank"
+                  >github</a
+                >
+              </div>
+            </div>
+          </div>
+
+
+          <div class="projects__item">
+            <div class="projects__img-container" data-tools="2">
+              <img
+                class="projects__img projects__img--2"
+                alt="project_picture"
+              />
+              <div class="projects__tools projects__tools--2">
+                ReactJS &#x2022; Redux &#x2022; Sass <br />
+                TMDB API
+              </div>
+              <img class="touch touch--2" alt="mobile-touch" />
+            </div>
+            <div class="projects__desc">
+              <h2 class="projects__heading-2">MovieUp</h2>
+              <p>An HBO GO streaming website clone utilizing the TMDB API.</p>
+              <div class="projects__links">
+                <a href="https://github.com/EjMat8/MovieApp/" target="_blank"
+                  >github</a
+                ><a href="https://movie-up.netlify.app/" target="_blank"
+                  >live site</a
+                >
+              </div>
+            </div>
+          </div>
